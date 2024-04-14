@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Animal {
+    private:
+
+          int age;
+
+    public:
+           string name;
+
+          void eat(){
+            cout<<"eating"<<endl;
+          }
+
+          int getter(){
+            return age;
+          }
+
+          void setter(int age){
+            this->age=age;
+          }
+};
+
+class Dog: private Animal{
+
+         public:
+              int print(){
+                  return getter();
+             }
+};
+
+int main() {
+  // std::cout << "Hello World!\n";
+    Dog d1;
+    // cout<<d1.name<<endl;
+    // d1.eat();
+
+
+    cout<<"this is the space : "<<endl;
+     cout<<d1.print()<<endl;
+  
+}

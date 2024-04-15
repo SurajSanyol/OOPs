@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+   virtual void speak() { cout << "spaking" << endl; }
+};
+
+class Dog : public Animal {
+public:
+   // we are doing function overriding
+  void speak() { cout << "barking" << endl; }
+};
+
+int main() {
+  // Dog a1;
+  // a1.speak();
+
+  // upcasting
+   Animal * a = new Dog();
+  a->speak();
+
+  cout<<endl;
+   Animal * a1 = new Animal();
+   a1->speak();
+
+   cout<<endl;
+  Dog * a3 = new Dog();
+  a3->speak();
+
+   // down casting 
+   cout<<endl;
+  Dog* a4 =(Dog*) new Animal();
+  a4->speak();
+
+  Animal b;
+  Animal *b2 = &b;
+  b2->speak();
+}
